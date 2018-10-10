@@ -1,9 +1,10 @@
 package condition
 
-// Condition is a function that evaluates if a condition is true or false.
+// Condition is a function that evaluates to true or false.
 type Condition func() bool
 
-// All returns true only if all of the provided conditions are true.
+// All returns true only if all of the provided conditions are true, false
+// otherwise.
 func All(conditions ...Condition) bool {
     for _, condition := range conditions {
         if !condition() { return false }
