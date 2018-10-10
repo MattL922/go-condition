@@ -24,9 +24,6 @@ func Any(conditions ...Condition) bool {
 // None returns true if none of the provided conditions are true, false
 // otherwise.
 func None(conditions ...Condition) bool {
-    for _, condition := range conditions {
-        if condition() { return false }
-    }
-    return true
+    return !Any(conditions...)
 }
 
